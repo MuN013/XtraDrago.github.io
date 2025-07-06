@@ -1,0 +1,61 @@
+app.get("/", (req, res) => {
+  res.send(`
+    <html>
+    <head>
+      <title>WebsiteTerkini</title>
+      <style>
+        body {
+          background: #111;
+          color: white;
+          font-family: sans-serif;
+          margin: 0;
+          height: 100vh;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          flex-direction: column;
+        }
+        textarea {
+          width: 70vw;
+          height: 40vh;
+          background: #222;
+          color: white;
+          border: 1px solid #555;
+          padding: 10px;
+          font-size: 15px;
+        }
+        button {
+          margin-top: 20px;
+          padding: 15px 30px;
+          background: #0f0;
+          border: none;
+          border-radius: 5px;
+          color: black;
+          font-size: 18px;
+          font-weight: bold;
+          cursor: pointer;
+        }
+        a {
+          margin-top: 20px;
+          display: inline-block;
+          background: #0f0;
+          color: black;
+          padding: 12px 25px;
+          font-weight: bold;
+          border-radius: 5px;
+          text-decoration: none;
+          font-size: 16px;
+        }
+      </style>
+    </head>
+    <body>
+      <h2>📝 Update</h2>
+      <form method="POST">
+        <textarea name="code">${script}</textarea><br>
+        <button type="submit">💾 Save</button>
+      </form>
+      <a href="/raw">🔗 View Raw</a>
+    </body>
+    </html>
+  `)
+})
